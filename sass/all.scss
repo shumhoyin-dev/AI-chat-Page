@@ -1,1 +1,238 @@
 @import "reset";
+@import "variable";
+@import "mixin";
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    // outline: 1px solid red;
+}
+
+body {
+    /* 先套用 Noto Sans TC 這個 思源黑體 */
+    font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    height: 200vh;
+}
+
+
+.top-button {
+    display: block;
+    max-width: 71px;
+    height: 71px;
+    position: fixed;
+    right: 48px;
+    bottom: 23px;
+}
+
+.container {
+    max-width: 1085px;
+    margin: 0 auto;
+}
+
+.company {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+    padding: 0 22px;
+
+    &-logo {
+        max-width: 13.75rem;
+    }
+
+}
+
+
+
+.btn {
+    display: block;
+    padding: 8px 32px;
+    font-size: 1rem;
+    color: #ffffff;
+    line-height: 1.5;
+    max-width: 128px;
+
+    &-plan {
+        background: $plan-color;
+    }
+}
+
+.background {
+    background-image: url("/asset/bg_home.svg");
+    background-position: right top;
+    background-repeat: no-repeat, no-repeat;
+    // background-repeat: no-repeat;
+
+}
+
+.round-22 {
+    border-radius: 22px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-center-last {
+    text-align-last: center;
+}
+
+.f-16 {
+    font-size: 1rem;
+}
+
+.f-24 {
+    font-size: 1.5rem;
+}
+
+
+.f-32 {
+    font-size: 2rem;
+}
+
+.f-primary {
+    color: $font-primary;
+}
+
+.f-bold {
+    font-weight: 500;
+}
+
+.f-justify {
+    text-align: justify;
+}
+
+.platform {
+    max-width: 969px;
+    margin: 0 auto;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.m0-auto {
+    margin: 0 auto;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.platform {
+
+    &-list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+
+        @include for-tablet-portrait-up {
+            justify-content: center;
+
+        }
+
+        @include for-phone-only {
+            flex-direction: column;
+        }
+    }
+
+    &-item {
+
+        width: 15.25rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        @include for-tablet-portrait-up {
+            &:not(:last-child) {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        @include for-phone-only {}
+    }
+
+
+    &-img {
+        width: 5.625rem;
+    }
+
+
+    &-title {
+        width: 100%;
+    }
+
+    &-desc {
+        width: 14.25rem;
+        color: $font-second;
+    }
+}
+
+
+.mt-48 {
+    margin-top: 3rem;
+}
+
+.mt-24 {
+    margin-top: 1.5rem;
+}
+
+
+// .middle::before {
+//     content: '';
+//     width: 360px;
+//     height: 360px;
+//     background-color: #56C4C5;
+//     position: absolute;
+//     border-radius: 99999px;
+//     left: -222px;
+//     top: 300px;
+//     z-index: -1;
+// }
+
+
+.footer {
+    &-copyright {
+        padding: 16px 0px;
+        background: $background-secondary;
+    }
+}
+
+.line-height {
+    line-height: 1.5;
+}
