@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../sass/all.scss",
+        "../sass/_reset.scss"
+    ],
+    "names": [],
+    "file": "all.css"
+}
