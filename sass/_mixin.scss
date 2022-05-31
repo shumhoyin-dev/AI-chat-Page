@@ -28,3 +28,28 @@
         @content;
     }
 }
+
+@mixin padding-y($className, $styleName) {
+    $i: 0;
+    @while $i <= $max {
+      #{$className + $i} { 
+    
+      }
+      $i: $i + $offset;
+    }
+  }
+
+$max: 48;
+$offset: 16;
+$unit: 'rem'; // Feel free to change the unit.
+@mixin list-loop($className) {
+  $i: 16;
+  @while $i <= $max {
+    #{$className + $i} { 
+        padding-top: #{$i/$offset + $unit};
+        padding-bottom: #{$i/$offset + $unit};
+    }
+    $i: $i + $offset;
+  }
+}
+@include list-loop('.px-',);

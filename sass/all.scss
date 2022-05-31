@@ -24,12 +24,13 @@ img {
 }
 
 a {
+    display:inline-block;
     text-decoration: none;
 }
 
-body {
-    height: 200vh;
-}
+// body {
+//     height: 200vh;
+// }
 
 
 .top-button {
@@ -213,6 +214,8 @@ body {
 }
 
 
+
+
 // .middle::before {
 //     content: '';
 //     width: 360px;
@@ -225,12 +228,33 @@ body {
 //     z-index: -1;
 // }
 
+.slogan{
+    // position: relative;
+    &-area{
+        position:absolute;
+
+    }
+    &-text{
+        &::before{
+            content:" \\ ";
+        }
+        &::after{
+            content:" / ";
+        }
+    }
+    &-button{
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        background: $primary;
+        color:#FFF;
+        border-radius: 1.688rem;
+    }
+}
 
 .footer {
-    &-copyright {
-        padding: 16px 0px;
-        background: $background-secondary;
-    }
+    background: $background-secondary;
 }
 
 .line-height {
