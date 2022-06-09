@@ -1,18 +1,18 @@
 @mixin for-phone-only {
-    @media (max-width: 375px) {
+    @media (max-width: 400px) {
         @content;
 
     }
 }
 
 @mixin for-tablet-portrait-up {
-    @media (max-width: 730px) {
+    @media (max-width:870px) {
         @content;
     }
 }
 
 @mixin for-tablet-landscape-up {
-    @media (min-width: 900px) {
+    @media (max-width: 1056px) {
         @content;
     }
 }
@@ -29,27 +29,21 @@
     }
 }
 
-@mixin padding-y($className, $styleName) {
-    $i: 0;
-    @while $i <= $max {
-      #{$className + $i} { 
-    
-      }
-      $i: $i + $offset;
-    }
-  }
-
 $max: 48;
 $offset: 16;
 $unit: 'rem'; // Feel free to change the unit.
+
 @mixin list-loop($className) {
-  $i: 16;
-  @while $i <= $max {
-    #{$className + $i} { 
-        padding-top: #{$i/$offset + $unit};
-        padding-bottom: #{$i/$offset + $unit};
+    $i: 16;
+
+    @while $i <=$max {
+        #{$className + $i} {
+            padding-top: #{$i/$offset + $unit};
+            padding-bottom: #{$i/$offset + $unit};
+        }
+
+        $i: $i + $offset;
     }
-    $i: $i + $offset;
-  }
 }
-@include list-loop('.px-',);
+
+@include list-loop('.px-', );

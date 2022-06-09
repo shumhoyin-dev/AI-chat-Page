@@ -17,6 +17,13 @@ body {
     font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
 }
 
+
+.container {
+    max-width: 1085px;
+    margin: 0 auto;
+}
+
+
 img {
     width: 100%;
     height: auto;
@@ -28,9 +35,104 @@ a {
     text-decoration: none;
 }
 
+.bgYellow {
+    position: absolute;
+    right: 0;
+    z-index: -1;
+
+    @include for-tablet-landscape-up {
+        display: none;
+    }
+
+}
+
 .main {
     max-width: 1366px;
     margin: 0 auto;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+
+    @include for-tablet-landscape-up {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+
+    &-theme {
+        width: 50%;
+
+        @include for-tablet-landscape-up {
+            width: max-content;
+        }
+
+    }
+
+    &-header {
+        color: $primary;
+        font-size: 18px;
+        line-height: 1.44;
+        font-weight: bold;
+
+        @include for-tablet-landscape-up {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+    }
+
+    &-slogan {
+        font-size: 48px;
+        line-height: 1.46;
+        color: #221E1F;
+        margin-top: 8px;
+        font-weight: bold;
+
+        @include for-tablet-landscape-up {
+            font-size: 32px;
+        }
+    }
+
+    &-footer {
+        font-size: 20px;
+        line-height: 1.45;
+        color: #221E1F;
+        margin-top: 16px;
+        font-weight: normal;
+
+        @include for-tablet-landscape-up {
+            font-size: 16px;
+            line-height: 1.5;
+
+        }
+    }
+
+    &-img {
+        width: 50%;
+        position: relative;
+
+        @include for-tablet-landscape-up {
+            margin-top: 32px;
+        }
+
+        &-small {
+            display: none;
+            position: absolute;
+
+            @include for-tablet-landscape-up {
+                display: block;
+                z-index: -1;
+                bottom: 0;
+            }
+        }
+
+    }
 }
 
 
@@ -44,20 +146,33 @@ a {
     z-index: 1;
 }
 
-.container {
-    max-width: 1085px;
-    margin: 0 auto;
-}
 
 .company {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 24px;
-    padding: 0 22px;
+    flex-wrap: wrap;
+    padding: 24px 22px 0 22px;
+
+    @include for-tablet-landscape-up {
+        padding: 24px 20px;
+
+        border-bottom: 1px solid #FFD153;
+    }
+
+    @include for-phone-only {
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
 
     &-logo {
         max-width: 13.75rem;
+
+        @include for-phone-only {
+            margin-bottom: 10px;
+        }
     }
 
 }
@@ -65,30 +180,30 @@ a {
 
 
 .btn {
-    display: block;
     padding: 8px 32px;
     font-size: 1rem;
     color: #ffffff;
     line-height: 1.5;
-    max-width: 128px;
+    // max-width: 128px;
 
     &-plan {
         background: $primary;
-        &-secondary{
-            background-color:$secondary; ;
+
+        &-secondary {
+            background-color: $secondary;
         }
     }
 }
 
-.background {
-    background-image: url("/asset/bg_home.svg");
-    background-position: right top;
-    background-repeat: no-repeat, no-repeat;
-    // background-repeat: no-repeat;
+// .background {
+//     background-image: url("/asset/bg_home.svg");
+//     background-position: right top;
+//     background-repeat: no-repeat, no-repeat;
+//     // background-repeat: no-repeat;
 
-}
+// }
 
-.btn{
+.btn {
     display: inline-block;
 }
 
@@ -162,7 +277,12 @@ a {
     justify-content: space-between;
 }
 
+.middle {
+    margin-top: 100px;
+}
+
 .platform {
+
 
     &-list {
         display: flex;
@@ -170,10 +290,6 @@ a {
         align-items: center;
         flex-wrap: wrap;
 
-        // @include for-tablet-portrait-up {
-        //     justify-content: center;
-
-        // }
     }
 
     &-item {
@@ -185,11 +301,16 @@ a {
         justify-content: center;
 
 
-        // @include for-tablet-portrait-up {
-        //     &:not(:last-child) {
-        //         margin-bottom: 1.5rem;
-        //     }
-        // }
+        @include for-tablet-portrait-up {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @include for-tablet-portrait-up {
+            &:not(:last-child) {
+                margin-bottom: 1.5rem;
+            }
+        }
 
         // @include for-phone-only {}
     }
@@ -235,34 +356,110 @@ a {
 // }
 
 
-.function{
+.character {
+    text-align: center;
+    margin-top: 100px;
+
+    h2 {
+        font-size: 32px;
+        line-height: 1.4375;
+        font-weight: bold;
+        margin: 0 auto;
+    }
+
+    &-slogan {
+        font-size: 20px;
+        line-height: 1.45;
+        margin: 16px auto 0 auto;
+    }
+
+    &-test2 {
+        // width: 100%;
+        // display: flex;
+        // justify-content: center;
+    }
+
+    &-list {
+        margin-top: 48px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+
+        @include for-tablet-landscape-up {
+            width: 260px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    }
+
+
+    &-item {
+        width: 260px;
+        border-radius: 12px;
+        box-shadow: 0px 2px 10px #00000014;
+        margin-bottom: 24px;
+
+        img {
+            border-radius: 12px 12px 0 0;
+        }
+    }
+
+    &-test {
+        padding: 16px 16px 24px 16px;
+    }
+
+    &-title {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-top: 16px;
+        color: #56C4C5;
+    }
+
+    &-desc {
+        margin-top: 16px;
+        font-size: 14px;
+        line-height: 1.5;
+        text-align-last: center;
+    }
+}
+
+
+.function {
     display: flex;
     margin-top: 100px;
     margin-bottom: 100px;
 
-    &-list{
+
+    @include for-tablet-landscape-up {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &-list {
         width: 50%;
         display: flex;
         justify-content: space-evenly;
         flex-wrap: wrap;
         align-items: center;
+
+        @include for-tablet-landscape-up {
+            margin-top: 32px;
+        }
     }
 
-    li:nth-child(-n+2){
-        // your style
-        margin-bottom: 24px;
-       
-    }
 
-    &-item{
+    &-item {
         padding: 32px 32px 48px 32px;
-        width: 45%;
+        width: 230px;
         box-shadow: 0px 2px 10px #00000014;
         border-radius: 12px;
-        
+        margin-bottom: 24px;
     }
 
-    &-img{
+    &-img {
         width: 86px;
         height: 86px;
         padding: 17px;
@@ -271,17 +468,19 @@ a {
     }
 
 
- 
 
-    &-content{
+
+    &-content {
         margin-top: 24px;
-        h2{
+
+        h2 {
             font-size: 18px;
             line-height: 1.4;
             margin-top: 24px;
             font-weight: bold;
         }
-        p{
+
+        p {
             margin-top: 16px;
             line-height: 1.5;
             // margin-bottom: 4px;
@@ -291,29 +490,35 @@ a {
 
 
 
-    &-slogan{
-       
+    &-slogan {
+
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
-        
 
-        &-header{
+        @include for-tablet-landscape-up {
+            align-items: center;
+            text-align-last: center;
+        }
+
+
+        &-header {
             font-weight: bold;
             font-size: 32px;
             line-height: 1.4375;
 
+
         }
 
 
-        &-content{
+        &-content {
             margin-top: 10px;
             font-size: 18px;
             line-height: 1.4;
         }
 
-        &-button{
+        &-button {
             margin-top: 24px;
         }
     }
@@ -336,11 +541,16 @@ a {
 
 }
 
-.testitem{
+.testitem {
     width: 50%;
     display: flex;
     justify-content: end;
     align-items: center;
+
+    @include for-tablet-landscape-up {
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 .comment-item {
@@ -403,10 +613,11 @@ a {
 
     &-footer {
         margin-top: 24px;
+
         // display: flex;
         // justify-content: space-between;
         // align-items: end;
-        h3{
+        h3 {
             font-weight: bold;
         }
     }
@@ -450,8 +661,8 @@ a {
             background: #DDDDDD;
             border-radius: 999px;
 
-            &:hover{
-                background:#FFD153;
+            &:hover {
+                background: #FFD153;
             }
         }
     }
@@ -469,7 +680,7 @@ a {
         text-align: center;
         display: inline;
         position: absolute;
-        bottom:30px;
+        bottom: 30px;
 
     }
 
