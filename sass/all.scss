@@ -69,7 +69,7 @@ a {
         width: 50%;
 
         @include for-tablet-landscape-up {
-            width: max-content;
+            // width: max-content;
         }
 
     }
@@ -714,4 +714,21 @@ a {
 
 .line-height {
     line-height: 1.5;
+}
+
+.home_footer_banner{
+    display: block;
+
+    @include for-tablet-portrait-up{
+        display: none;
+    }
+}
+
+
+.home_footer_sm_banner{
+    display: none;
+
+    @include for-tablet-portrait-up{
+        display: block;
+    }
 }
