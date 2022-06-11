@@ -289,7 +289,13 @@ a {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        flex-wrap: wrap;
+        // flex-wrap: wrap;
+
+        @include for-tablet-landscape-up {
+            flex-direction: column;
+            justify-self: center;
+        }
+
 
     }
 
@@ -302,18 +308,18 @@ a {
         justify-content: center;
 
 
-        @include for-tablet-portrait-up {
+        @include for-tablet-landscape-up {
             margin-left: auto;
             margin-right: auto;
-        }
 
-        @include for-tablet-portrait-up {
             &:not(:last-child) {
                 margin-bottom: 1.5rem;
             }
         }
 
-        // @include for-phone-only {}
+
+
+
     }
 
 
@@ -374,11 +380,6 @@ a {
         margin: 16px auto 0 auto;
     }
 
-    &-test2 {
-        // width: 100%;
-        // display: flex;
-        // justify-content: center;
-    }
 
     &-list {
         margin-top: 48px;
@@ -570,6 +571,7 @@ a {
         }
     }
 
+    flex-grow: 1;
     margin-top: 48px;
     position: relative;
     padding: 48px 32px 32px 24px;
@@ -582,18 +584,6 @@ a {
         width: 100%;
 
     }
-
-    // @include for-tablet-portrait-up {
-    //     width: 50%;
-
-    //     &:not(:last-child) {
-    //         margin-bottom: 70px;
-    //     }
-
-
-    // }
-
-
 
     &-img {
         position: absolute;
@@ -683,6 +673,15 @@ a {
         position: absolute;
         bottom: 30px;
 
+        @include for-tablet-landscape-up {
+            bottom: 70px;
+        }
+
+        @include for-phone-only {
+            bottom: 20px;
+        }
+
+
     }
 
     &-text {
@@ -692,6 +691,16 @@ a {
 
         &::after {
             content: " / ";
+        }
+
+        font-weight: bold;
+
+        @include for-tablet-landscape-up {
+            font-size: 26px;
+        }
+
+        @include for-phone-only {
+            font-size: 20px;
         }
 
 
@@ -731,5 +740,11 @@ a {
 
     @include for-tablet-portrait-up {
         display: block;
+    }
+}
+
+.display-pad-none {
+    @include for-tablet-landscape-up {
+        display: none;
     }
 }

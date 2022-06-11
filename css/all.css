@@ -340,7 +340,13 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+}
+
+@media (max-width: 1056px) {
+  .platform-list {
+    flex-direction: column;
+    justify-self: center;
+  }
 }
 
 .platform-item {
@@ -351,14 +357,11 @@ a {
   justify-content: center;
 }
 
-@media (max-width: 870px) {
+@media (max-width: 1056px) {
   .platform-item {
     margin-left: auto;
     margin-right: auto;
   }
-}
-
-@media (max-width: 870px) {
   .platform-item:not(:last-child) {
     margin-bottom: 1.5rem;
   }
@@ -561,6 +564,7 @@ a {
 }
 
 .comment-item {
+  flex-grow: 1;
   margin-top: 48px;
   position: relative;
   padding: 48px 32px 32px 24px;
@@ -666,7 +670,20 @@ a {
   bottom: 30px;
 }
 
+@media (max-width: 1056px) {
+  .slogan-area {
+    bottom: 70px;
+  }
+}
+
+@media (max-width: 400px) {
+  .slogan-area {
+    bottom: 20px;
+  }
+}
+
 .slogan-text {
+  font-weight: bold;
   margin-bottom: 3rem;
 }
 
@@ -676,6 +693,18 @@ a {
 
 .slogan-text::after {
   content: " / ";
+}
+
+@media (max-width: 1056px) {
+  .slogan-text {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 400px) {
+  .slogan-text {
+    font-size: 20px;
+  }
 }
 
 .slogan-button {
@@ -713,6 +742,12 @@ a {
 @media (max-width: 870px) {
   .home_footer_sm_banner {
     display: block;
+  }
+}
+
+@media (max-width: 1056px) {
+  .display-pad-none {
+    display: none;
   }
 }
 /*# sourceMappingURL=all.css.map */
