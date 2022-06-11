@@ -667,7 +667,7 @@ a {
   text-align: center;
   display: inline;
   position: absolute;
-  bottom: 30px;
+  bottom: 100px;
 }
 
 @media (max-width: 1056px) {
